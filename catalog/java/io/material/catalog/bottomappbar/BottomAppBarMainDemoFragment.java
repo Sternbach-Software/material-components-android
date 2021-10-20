@@ -109,7 +109,44 @@ public class BottomAppBarMainDemoFragment extends DemoFragment implements OnBack
   public int getBottomAppBarContent() {
     return R.layout.cat_bottomappbar_fragment;
   }
-
+  /**
+   * <p>Finds the n-th index within a String, handling {@code null}.
+   * This method uses {@link String#indexOf(String)} if possible.</p>
+   * <p>Note that matches may overlap<p>
+   *
+   * <p>A {@code null} CharSequence will return {@code -1}.</p>
+   *
+   * @param str  the CharSequence to check, may be null
+   * @param searchStr  the CharSequence to find, may be null
+   * @param ordinal  the n-th {@code searchStr} to find, overlapping matches are allowed.
+   * @param lastIndex true if lastOrdinalIndexOf() otherwise false if ordinalIndexOf()
+   * @return the n-th index of the search CharSequence,
+   *  {@code -1} if no match or {@code null} string input
+   */
+  private static int ordinalIndexOf(final String str, final String searchStr, final int ordinal, final boolean lastIndex) {
+    if (str == null || searchStr == null || ordinal <= 0) {
+      return -1;
+    }
+    if (searchStr.length() == 0) {
+      return lastIndex ? str.length() : 0;
+    }
+    int found = 0;
+    // set the initial index beyond the end of the string
+    // this is to allow for the initial index decrement/increment
+    int index = lastIndex ? str.length() : -1;
+    do {
+      if (lastIndex) {
+        index = str.lastIndexOf(searchStr, index - 1); // step backwards thru string
+      } else {
+        index = str.indexOf(searchStr, index + 1); // step forwards through string
+      }
+      if (index < 0) {
+        return index;
+      }
+      found++;
+    } while (found < ordinal);
+    return index;
+  }
   @Override
   public View onCreateDemoView(
       LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
@@ -146,7 +183,17 @@ public class BottomAppBarMainDemoFragment extends DemoFragment implements OnBack
     card6 = view.findViewById(R.id.card6);
     card7 = view.findViewById(R.id.card7);
     card8 = view.findViewById(R.id.card8);
-    applyAlpha.setOnClickListener(view1 -> {
+    view.<MaterialButton>findViewById(R.id.delete_all).setOnClickListener(view1 -> {
+      spe.putString(PREFERENCES, "").commit();
+          savedConfigurations.setText("");
+    });
+    view.<MaterialButton>findViewById(R.id.delete_last).setOnClickListener(view1 -> {
+      String string = sp.getString(PREFERENCES, "");
+      String substring = string.substring(0, ordinalIndexOf(string, "\n", 2, true) + 1);
+      spe.putString(PREFERENCES, substring).commit();
+        savedConfigurations.setText(substring);
+    });
+      applyAlpha.setOnClickListener(view1 -> {
       Editable text = alphaValue.getText();
       if(text != null) {
         int value = Integer.parseInt(text.toString());
@@ -168,7 +215,12 @@ public class BottomAppBarMainDemoFragment extends DemoFragment implements OnBack
     fab.setOnClickListener(v -> {
       Editable text = alphaValue.getText();
       int value = 0;
-      if(text != null) { value = Integer.parseInt(text.toString()); }
+      if(text != null) {
+        String a = text.toString();
+        if (!a.equals("")) {
+          value = Integer.parseInt(text.toString());
+        }
+      }
       Context context = view.getContext();
       String result = "primary: " + Integer.toHexString(getColorFromAttr(context, R.attr.colorPrimary)) + ", secondary: " + Integer.toHexString(getColorFromAttr(context, R.attr.colorSecondary)) + ", variant: " + Integer.toHexString(getColorFromAttr(context, R.attr.colorSecondaryVariant)) + ", Alpha: " + value + "\n";
       showSnackbar("Configuration saved: " + result);
