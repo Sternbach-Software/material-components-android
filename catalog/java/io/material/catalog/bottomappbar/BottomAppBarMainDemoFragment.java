@@ -18,6 +18,8 @@ package io.material.catalog.bottomappbar;
 
 import io.material.catalog.R;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -26,6 +28,7 @@ import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -36,6 +39,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
@@ -59,12 +63,15 @@ import io.material.catalog.themeswitcher.ThemeSwitcherHelper;
 
 /** A fragment that displays the main Bottom App Bar demos for the Catalog app. */
 public class BottomAppBarMainDemoFragment extends DemoFragment implements OnBackPressedHandler {
-
+  public final String PREFERENCES = "mPREFERENCES";
+  SharedPreferences sp;
+  SharedPreferences.Editor spe;
   protected BottomAppBar bar;
   protected CoordinatorLayout coordinatorLayout;
   protected FloatingActionButton fab;
   protected MaterialButton applyAlpha;
   protected TextInputEditText alphaValue;
+  protected TextView savedConfigurations;
   protected MaterialCardView card1;
   protected MaterialCardView card2;
   protected MaterialCardView card3;
@@ -107,7 +114,8 @@ public class BottomAppBarMainDemoFragment extends DemoFragment implements OnBack
   public View onCreateDemoView(
       LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
     View view = layoutInflater.inflate(getBottomAppBarContent(), viewGroup, false);
-
+    sp = PreferenceManager.getDefaultSharedPreferences(view.getContext());
+    spe = sp.edit();
     Toolbar toolbar = view.findViewById(R.id.toolbar);
     toolbar.setTitle(getDefaultDemoTitle());
     themeSwitcherHelper.onCreateOptionsMenu(toolbar.getMenu(), getActivity().getMenuInflater());
@@ -117,11 +125,11 @@ public class BottomAppBarMainDemoFragment extends DemoFragment implements OnBack
     coordinatorLayout = view.findViewById(R.id.coordinator_layout);
     bar = view.findViewById(R.id.bar);
     ((AppCompatActivity) getActivity()).setSupportActionBar(bar);
-
+    savedConfigurations = view.findViewById(R.id.saved_configurations);
+    savedConfigurations.setText(sp.getString(PREFERENCES, "No configurations saved yet."));
     setUpBottomDrawer(view);
 
     fab = view.findViewById(R.id.fab);
-    fab.setOnClickListener(v -> showSnackbar(fab.getContentDescription()));
     NavigationView navigationView = view.findViewById(R.id.navigation_view);
     navigationView.setNavigationItemSelectedListener(
         item -> {
@@ -156,6 +164,18 @@ public class BottomAppBarMainDemoFragment extends DemoFragment implements OnBack
         card7.setCardBackgroundColor(secondaryVariantColor);
         card8.setCardBackgroundColor(secondaryVariantColor);
       }
+    });
+    fab.setOnClickListener(v -> {
+      Editable text = alphaValue.getText();
+      int value = 0;
+      if(text != null) { value = Integer.parseInt(text.toString()); }
+      Context context = view.getContext();
+      String result = "primary: " + Integer.toHexString(getColorFromAttr(context, R.attr.colorPrimary)) + ", secondary: " + Integer.toHexString(getColorFromAttr(context, R.attr.colorSecondary)) + ", variant: " + Integer.toHexString(getColorFromAttr(context, R.attr.colorSecondaryVariant)) + ", Alpha: " + value + "\n";
+      showSnackbar("Configuration saved: " + result);
+      String previous = sp.getString(PREFERENCES, "");
+      String newString = previous + result;
+      spe.putString(PREFERENCES, newString).commit();
+      savedConfigurations.setText(newString);
     });
     /*Button centerButton = view.findViewById(R.id.center);
     Button endButton = view.findViewById(R.id.end);
@@ -198,6 +218,12 @@ public class BottomAppBarMainDemoFragment extends DemoFragment implements OnBack
     return view;
   }
 
+  @ColorInt public int getColorFromAttr(Context context, int attr){
+    TypedValue typedValue = new TypedValue();
+    Resources.Theme theme = context.getTheme();
+    theme.resolveAttribute(attr, typedValue, true);
+    return typedValue.data;
+  }
   @Override
   public boolean onBackPressed() {
     if (bottomDrawerBehavior.getState() != BottomSheetBehavior.STATE_HIDDEN) {
@@ -246,7 +272,7 @@ public class BottomAppBarMainDemoFragment extends DemoFragment implements OnBack
   }
 
   private void showSnackbar(CharSequence text) {
-    Snackbar.make(coordinatorLayout, text, Snackbar.LENGTH_SHORT)
+    Snackbar.make(coordinatorLayout, text, Snackbar.LENGTH_LONG)
         .setAnchorView(fab.getVisibility() == View.VISIBLE ? fab : bar)
         .show();
   }

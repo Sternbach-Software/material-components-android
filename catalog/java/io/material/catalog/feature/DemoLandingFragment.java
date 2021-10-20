@@ -202,7 +202,7 @@ public abstract class DemoLandingFragment extends DaggerFragment {
     } else if (demo.createActivityIntent() != null) {
       startDemoActivity(sharedElement, demo.createActivityIntent(), transitionName);
     } else {
-      throw new IllegalStateException("Demo must implement createFragment or createActivityIntent");
+      throw new IllegalStateException("Demo must  implement createFragment or createActivityIntent");
     }
   }
 

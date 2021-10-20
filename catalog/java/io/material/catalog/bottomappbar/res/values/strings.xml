@@ -17,7 +17,7 @@
 
 <resources>
 
-  <string name="cat_bottomappbar_title">Bottom App Bar</string>
+  <string name="cat_bottomappbar_title">All Components</string>
   <string name="cat_bottomappbar_description">
     A bottom app bar provides a docked bar at the bottom of the screen for common application
     actions. The bottom app bar includes a floating button for a primary action and a navigation bar

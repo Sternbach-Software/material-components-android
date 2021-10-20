@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright 2017 The Android Open Source Project
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,59 +14,59 @@
   limitations under the License.
   -->
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fitsSystemWindows="true">
 
   <androidx.core.widget.NestedScrollView
-      android:id="@+id/cat_demo_landing_content"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    android:id="@+id/cat_demo_landing_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="20dp"
-          android:layout_marginBottom="16dp"
-          android:layout_marginLeft="16dp"
-          android:layout_marginRight="16dp"
-          android:text="@string/cat_demo_landing_description_header"
-          android:visibility="gone"
-          android:textAppearance="?attr/textAppearanceSubtitle1"/>
-
-      <TextView
-          android:id="@+id/cat_demo_landing_description"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="8dp"
-          android:layout_marginLeft="16dp"
-          android:layout_marginRight="16dp"
-          android:lineSpacingMultiplier="1.5"
-          android:visibility="gone"
-          android:textAppearance="?attr/textAppearanceBody2"
-          tools:text="This is placeholder text for the description of the feature demo which should explain the key aspects of the feature."/>
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
 
       <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/cat_demo_landing_description_header"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        android:visibility="gone" />
+
+      <TextView
+        android:id="@+id/cat_demo_landing_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
         android:lineSpacingMultiplier="1.5"
-        android:text="Primary color (changes settings options in bottom sheet):"
-        android:textAppearance="?attr/textAppearanceHeadline4" />
-<!--
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:visibility="gone"
+        tools:text="This is placeholder text for the description of the feature demo which should explain the key aspects of the feature." />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="This is an app to compare how different shades/variations of the TorahDownloads colors look on all of the components available in Android. There are 2 primary goals of this app: to find a nice dark mode color scheme, and to possibly find better variations of the main site color scheme for use on the web and in light mode on Android.\n\nDon't be fooled: the purple/cyan color scheme currently displayed in this app is the default Android color scheme; just ignore it. You can see the suggested colors by clicking the 'play' button below to go to the components demo page. The 'suggested' colors were derived by performing a number of mathematical equations on the current TD orange and some of its derivatives; these equations are used in the design industry to find harmonious colors.\n\nCertain blues may not go with certain oranges (and vice-versa) because the blue was derived from a different orange than the one selected (or vice-versa), so don't question the equations, just try a different color combination. \n\nThe colors suggested here were chosen solely based on the equations, not out of personal preference. Though, I do think they did a good job for certain combinations. The current TorahDownloads primary color is blue and the secondary/accent color is orange, though the current blue does not fit any of the equations of the orange. It therefore seems fit to change it with one of the blues that do fit the equations (such as the ones presented in this app).  \n\nYou have the option to see how either orange or blue would look as the primary color by pressing the radio button below. The selected color will be used for the primary color in the demo page, and the unselected will be used for the secondary color and the secondary variant. Currently, the secondary variant only affects the shiur cards' background when selected, because I found that some of the colors were just right for some components, but were too hard on the eyes (especially in dark mode) when used for a full screen of selected shiur cards. There is also an option in the demo page to make the color used for the shiur cards' background softer by adding 'alpha'/transparency, in order to solve the same eye-strain problem.\n\nTo change the color scheme displayed on the components in the demo page, click the menu button in the demo page, then select the colors that you would like to see on the components, then click the 'Apply' button in the bottom sheet. You may have to drag the buttom sheet up to reveal the 'Apply' button.\n\nWhen you have found a configuration that you like, please click the heart button that floats above the bottom app bar at the bottom of the screen as you scroll."
+        android:textAppearance="?attr/textAppearanceSubtitle1" />
+      <!--        android:lineSpacingMultiplier="1.5"
+      -->
+      <!--
       <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -86,59 +85,60 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="Blue" />
+
         <RadioButton
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="Orange" />
-<!--        android:id="@+id/primary_orange"-->
+        <!--        android:id="@+id/primary_orange"-->
       </RadioGroup>
 
       <FrameLayout
-          android:id="@+id/cat_demo_landing_main_demo_container"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"/>
+        android:id="@+id/cat_demo_landing_main_demo_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
       <LinearLayout
-          android:id="@+id/cat_demo_landing_additional_demos_section"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:orientation="vertical">
+        android:id="@+id/cat_demo_landing_additional_demos_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/cat_list_divider_size"
-            android:background="?android:attr/listDivider"/>
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/cat_list_divider_size"
+          android:background="?android:attr/listDivider" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:text="@string/cat_demo_landing_additional_demos_header"
-            android:textAppearance="?attr/textAppearanceSubtitle1"/>
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginRight="16dp"
+          android:text="@string/cat_demo_landing_additional_demos_header"
+          android:textAppearance="?attr/textAppearanceSubtitle1" />
 
         <LinearLayout
-            android:id="@+id/cat_demo_landing_additional_demos_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+          android:id="@+id/cat_demo_landing_additional_demos_container"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical" />
       </LinearLayout>
 
-      <include layout="@layout/cat_demo_landing_links_section"/>
+      <include layout="@layout/cat_demo_landing_links_section" />
     </LinearLayout>
   </androidx.core.widget.NestedScrollView>
 
   <com.google.android.material.appbar.AppBarLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      app:liftOnScroll="true"
-      android:fitsSystemWindows="true">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    app:liftOnScroll="true">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        style="?attr/catalogToolbarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+      android:id="@+id/toolbar"
+      style="?attr/catalogToolbarStyle"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
   </com.google.android.material.appbar.AppBarLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

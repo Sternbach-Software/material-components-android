@@ -146,7 +146,8 @@
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:id="@+id/shape_families_label"/>
+      android:id="@+id/shape_families_label"
+    android:visibility="gone"/>
 
   <RadioGroup
       android:id="@+id/shape_families"
@@ -155,7 +156,8 @@
       android:layout_marginBottom="16dp"
       android:layout_gravity="center_horizontal"
       android:gravity="center"
-      android:orientation="horizontal">
+      android:orientation="horizontal"
+    android:visibility="gone">
 
     <RadioButton
         android:id="@+id/rounded_button"
@@ -182,7 +184,8 @@
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:id="@+id/shape_corner_sizes_label"/>
+      android:id="@+id/shape_corner_sizes_label"
+    android:visibility="visible"/>
 
   <RadioGroup
       android:id="@+id/shape_corner_sizes"
@@ -191,7 +194,8 @@
       android:layout_marginBottom="16dp"
       android:layout_gravity="center_horizontal"
       android:gravity="center"
-      android:orientation="horizontal"/>
+      android:orientation="horizontal"
+    android:visibility="visible"/>
 
   <Button
       android:id="@+id/apply_button"
