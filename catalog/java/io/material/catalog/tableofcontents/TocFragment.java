@@ -143,7 +143,7 @@ public class TocFragment extends DaggerFragment {
                 getContext().getString(feature1.getTitleResId()),
                 getContext().getString(feature2.getTitleResId())));
 
-    TocAdapter tocAdapter = new TocAdapter(getActivity(), featureList);
+    TocAdapter tocAdapter = new TocAdapter(getActivity(), Collections.singletonList(featureList.get(0)));
     recyclerView.setAdapter(tocAdapter);
 
     initThemeButton();

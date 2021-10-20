@@ -33,6 +33,8 @@ import androidx.core.view.MenuItemCompat;
 import androidx.core.view.ViewCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -40,6 +42,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.MarginLayoutParams;
+import android.widget.CompoundButton;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import androidx.annotation.ArrayRes;
 import androidx.annotation.ColorInt;
@@ -49,6 +53,8 @@ import androidx.annotation.StringRes;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
 import dagger.android.support.DaggerFragment;
+import io.material.catalog.themeswitcher.ThemeSwitcherResourceProvider;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -97,6 +103,13 @@ public abstract class DemoLandingFragment extends DaggerFragment {
     colorAccent = a.getColor(1, 0);
 
     TextView descriptionTextView = view.findViewById(R.id.cat_demo_landing_description);
+    RadioButton primaryBlue = view.findViewById(R.id.primary_blue);
+//    RadioButton primaryOrange = view.findViewById(R.id.primary_orange);
+    primaryBlue.setOnCheckedChangeListener((compoundButton, b) -> {
+      ThemeSwitcherResourceProvider.PRIMARY_BLUE = b;
+      Log.d("ThemeSwitcher", "Primary blue: " + b);
+    });
+    primaryBlue.performClick();
     ViewGroup mainDemoContainer = view.findViewById(R.id.cat_demo_landing_main_demo_container);
     ViewGroup additionalDemosSection =
         view.findViewById(R.id.cat_demo_landing_additional_demos_section);

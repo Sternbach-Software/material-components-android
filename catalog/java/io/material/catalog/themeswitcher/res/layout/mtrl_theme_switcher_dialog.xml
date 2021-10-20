@@ -123,6 +123,29 @@
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:text=" ? attr/colorSecondaryVariant"/>
+  <HorizontalScrollView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="16dp"
+      android:scrollbars="none">
+    <RadioGroup
+        android:id="@+id/secondary_variant_colors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
+  </HorizontalScrollView>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginBottom="16dp"
+      android:background="@android:color/white"
+      android:backgroundTint="?attr/colorControlHighlight"/>
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
       android:id="@+id/shape_families_label"/>
 
   <RadioGroup

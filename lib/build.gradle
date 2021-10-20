@@ -288,3 +288,6 @@ afterEvaluate {
     }
   }
 }
+repositories {
+    mavenCentral()
+}

@@ -15,7 +15,56 @@
   limitations under the License.
   -->
 <resources>
+<!--TorahDownloads themes-->
 
+  <style name="ThemeOverlay.SecondaryPalette.Option1" parent="">
+    <item name="colorSecondary">#402ee6</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryPalette.Option2" parent="">
+    <item name="colorSecondary">#003dcb</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryPalette.Option3" parent="">
+    <item name="colorSecondary">#0066ff</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryPalette.Option4" parent="">
+    <item name="colorSecondary">#2e78e6</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryPalette.Option5" parent="">
+    <item name="colorSecondary">#008eff</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryPalette.Option6" parent="">
+    <item name="colorSecondary">#6b93ff</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryPalette.Option7" parent="">
+    <item name="colorSecondary">#2ed4e6</item>
+  </style>
+
+
+  <style name="ThemeOverlay.SecondaryVariantPalette.Option1" parent="">
+    <item name="colorSecondaryVariant">#402ee6</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryVariantPalette.Option2" parent="">
+    <item name="colorSecondaryVariant">#003dcb</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryVariantPalette.Option3" parent="">
+    <item name="colorSecondaryVariant">#0066ff</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryVariantPalette.Option4" parent="">
+    <item name="colorSecondaryVariant">#2e78e6</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryVariantPalette.Option5" parent="">
+    <item name="colorSecondaryVariant">#008eff</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryVariantPalette.Option6" parent="">
+    <item name="colorSecondaryVariant">#6b93ff</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryVariantPalette.Option7" parent="">
+    <item name="colorSecondaryVariant">#2ed4e6</item>
+  </style>
+
+
+
+  <!--Material Design themes-->
   <style name="ThemeOverlay.SecondaryPalette.Red" parent="">
     <item name="colorSecondary">#e53935</item>
   </style>

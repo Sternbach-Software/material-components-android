@@ -16,6 +16,99 @@
   -->
 <resources>
 
+  <!--TorahDownloads themse-->
+  <style name="ThemeOverlay.PrimaryPalette.Option1" parent="">
+    <item name="colorPrimary">#c66a00</item>
+  </style>
+
+  <style name="ThemeOverlay.PrimaryPalette.Option2" parent="">
+    <item name="colorPrimary">#FF9B00</item>
+  </style>
+
+  <style name="ThemeOverlay.PrimaryPalette.Option3" parent="">
+    <item name="colorPrimary">#FFA826</item>
+  </style>
+  <style name="ThemeOverlay.PrimaryPalette.Option4" parent="">
+    <item name="colorPrimary">#e69c2e</item>
+  </style>
+  <style name="ThemeOverlay.PrimaryPalette.Option5" parent="">
+    <item name="colorPrimary">#ffca47</item>
+  </style>
+
+  <style name="ThemeOverlay.SecondaryPalette.Orange.Option1" parent="">
+    <item name="colorSecondary">#c66a00</item>
+  </style>
+
+  <style name="ThemeOverlay.SecondaryPalette.Orange.Option2" parent="">
+    <item name="colorSecondary">#FF9B00</item>
+  </style>
+
+  <style name="ThemeOverlay.SecondaryPalette.Orange.Option3" parent="">
+    <item name="colorSecondary">#FFA826</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryPalette.Orange.Option4" parent="">
+    <item name="colorSecondary">#e69c2e</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryPalette.Orange.Option5" parent="">
+    <item name="colorSecondary">#ffca47</item>
+  </style>
+
+
+  <style name="ThemeOverlay.SecondaryVariantPalette.Orange.Option1" parent="">
+    <item name="colorSecondaryVariant">#c66a00</item>
+  </style>
+
+  <style name="ThemeOverlay.SecondaryVariantPalette.Orange.Option2" parent="">
+    <item name="colorSecondaryVariant">#FF9B00</item>
+  </style>
+
+  <style name="ThemeOverlay.SecondaryVariantPalette.Orange.Option3" parent="">
+    <item name="colorSecondaryVariant">#FFA826</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryVariantPalette.Orange.Option4" parent="">
+    <item name="colorSecondaryVariant">#e69c2e</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryVariantPalette.Orange.Option5" parent="">
+    <item name="colorSecondaryVariant">#ffca47</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryVariantPalette.Orange.Option00" parent="">
+    <item name="colorSecondaryVariant">#00000000</item>
+  </style>
+
+
+  <style name="ThemeOverlay.PrimaryPalette.Blue.Option1" parent="">
+    <item name="colorPrimary">#402ee6</item>
+  </style>
+  <style name="ThemeOverlay.PrimaryPalette.Blue.Option2" parent="">
+    <item name="colorPrimary">#003dcb</item>
+  </style>
+  <style name="ThemeOverlay.PrimaryPalette.Blue.Option3" parent="">
+    <item name="colorPrimary">#0066ff</item>
+  </style>
+  <style name="ThemeOverlay.PrimaryPalette.Blue.Option4" parent="">
+    <item name="colorPrimary">#2e78e6</item>
+  </style>
+  <style name="ThemeOverlay.PrimaryPalette.Blue.Option5" parent="">
+    <item name="colorPrimary">#008eff</item>
+  </style>
+  <style name="ThemeOverlay.PrimaryPalette.Blue.Option6" parent="">
+    <item name="colorPrimary">#6b93ff</item>
+  </style>
+  <style name="ThemeOverlay.PrimaryPalette.Blue.Option7" parent="">
+    <item name="colorPrimary">#2ed4e6</item>
+  </style>
+
+
+
+
+  <style name="ThemeOverlay.PrimaryPalette.Option00" parent="">
+    <item name="colorPrimary">#00000000</item>
+  </style>
+  <style name="ThemeOverlay.SecondaryPalette.Option00" parent="">
+    <item name="colorSecondary">#00000000</item>
+  </style>
+
+  <!--Material Design themes-->
   <style name="ThemeOverlay.PrimaryPalette.Red" parent="">
     <item name="colorPrimary">#e53935</item>
     <item name="colorPrimaryDark">#ab000d</item>

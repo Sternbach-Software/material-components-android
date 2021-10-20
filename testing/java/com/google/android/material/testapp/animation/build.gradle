@@ -40,3 +40,6 @@ android {
     targetSdkVersion 29
   }
 }
+repositories {
+    mavenCentral()
+}

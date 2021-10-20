@@ -18,15 +18,23 @@ package io.material.catalog.bottomappbar;
 
 import io.material.catalog.R;
 
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.os.Bundle;
+
+import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import android.text.Editable;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ToggleButton;
 import androidx.annotation.LayoutRes;
@@ -35,12 +43,16 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomappbar.BottomAppBarTopEdgeTreatment;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.shape.CutCornerTreatment;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
+
 import io.material.catalog.feature.DemoFragment;
 import io.material.catalog.feature.OnBackPressedHandler;
 import io.material.catalog.themeswitcher.ThemeSwitcherHelper;
@@ -51,6 +63,16 @@ public class BottomAppBarMainDemoFragment extends DemoFragment implements OnBack
   protected BottomAppBar bar;
   protected CoordinatorLayout coordinatorLayout;
   protected FloatingActionButton fab;
+  protected MaterialButton applyAlpha;
+  protected TextInputEditText alphaValue;
+  protected MaterialCardView card1;
+  protected MaterialCardView card2;
+  protected MaterialCardView card3;
+  protected MaterialCardView card4;
+  protected MaterialCardView card5;
+  protected MaterialCardView card6;
+  protected MaterialCardView card7;
+  protected MaterialCardView card8;
 
   @Nullable private ThemeSwitcherHelper themeSwitcherHelper;
   private BottomSheetBehavior<View> bottomDrawerBehavior;
@@ -106,8 +128,36 @@ public class BottomAppBarMainDemoFragment extends DemoFragment implements OnBack
           showSnackbar(item.getTitle());
           return false;
         });
-
-    Button centerButton = view.findViewById(R.id.center);
+    applyAlpha = view.findViewById(R.id.apply_alpha_button);
+    alphaValue = view.findViewById(R.id.alpha_value);
+    card1 = view.findViewById(R.id.card1);
+    card2 = view.findViewById(R.id.card2);
+    card3 = view.findViewById(R.id.card3);
+    card4 = view.findViewById(R.id.card4);
+    card5 = view.findViewById(R.id.card5);
+    card6 = view.findViewById(R.id.card6);
+    card7 = view.findViewById(R.id.card7);
+    card8 = view.findViewById(R.id.card8);
+    applyAlpha.setOnClickListener(view1 -> {
+      Editable text = alphaValue.getText();
+      if(text != null) {
+        int value = Integer.parseInt(text.toString());
+        TypedValue typedValue = new TypedValue();
+        Resources.Theme theme = view1.getContext().getTheme();
+        theme.resolveAttribute(R.attr.colorSecondaryVariant, typedValue, true);
+        @ColorInt int color = typedValue.data;
+        ColorStateList secondaryVariantColor = ColorStateList.valueOf(color).withAlpha(value);
+        card1.setCardBackgroundColor(secondaryVariantColor);
+        card2.setCardBackgroundColor(secondaryVariantColor);
+        card3.setCardBackgroundColor(secondaryVariantColor);
+        card4.setCardBackgroundColor(secondaryVariantColor);
+        card5.setCardBackgroundColor(secondaryVariantColor);
+        card6.setCardBackgroundColor(secondaryVariantColor);
+        card7.setCardBackgroundColor(secondaryVariantColor);
+        card8.setCardBackgroundColor(secondaryVariantColor);
+      }
+    });
+    /*Button centerButton = view.findViewById(R.id.center);
     Button endButton = view.findViewById(R.id.end);
     ToggleButton attachToggle = view.findViewById(R.id.attach_toggle);
     attachToggle.setChecked(fab.getVisibility() == View.VISIBLE);
@@ -142,7 +192,7 @@ public class BottomAppBarMainDemoFragment extends DemoFragment implements OnBack
                 isChecked
                     ? BottomAppBar.FAB_ANIMATION_MODE_SLIDE
                     : BottomAppBar.FAB_ANIMATION_MODE_SCALE));
-
+*/
     setUpBottomAppBarShapeAppearance();
 
     return view;

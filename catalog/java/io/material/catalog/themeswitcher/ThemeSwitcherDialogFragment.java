@@ -74,6 +74,7 @@ public class ThemeSwitcherDialogFragment extends BottomSheetDialogFragment
   @Inject ThemeAttributeValuesCreator themeAttributeValuesCreator;
   private RadioGroup primaryColorGroup;
   private RadioGroup secondaryColorGroup;
+  private RadioGroup secondaryVariantColorGroup;
   private RadioGroup shapeCornerFamilyGroup;
   private RadioGroup shapeCornerSizeGroup;
 
@@ -120,6 +121,17 @@ public class ThemeSwitcherDialogFragment extends BottomSheetDialogFragment
         resourceProvider.getSecondaryColorsContentDescription(),
         resourceProvider.getSecondaryThemeOverlayAttrs(),
         R.id.theme_feature_secondary_color,
+        view.findViewById(R.id.secondary_colors_label),
+        resourceProvider.getSecondaryColorsGroupDescription(),
+        ThemingType.COLOR);
+
+    secondaryVariantColorGroup = view.findViewById(R.id.secondary_variant_colors);
+    initializeThemingValues(
+        secondaryVariantColorGroup,
+        resourceProvider.getSecondaryVariantColors(),
+        resourceProvider.getSecondaryColorsContentDescription(),
+        resourceProvider.getSecondaryVariantThemeOverlayAttrs(),
+        R.id.theme_feature_secondary_variant_color,
         view.findViewById(R.id.secondary_colors_label),
         resourceProvider.getSecondaryColorsGroupDescription(),
         ThemingType.COLOR);
@@ -180,6 +192,7 @@ public class ThemeSwitcherDialogFragment extends BottomSheetDialogFragment
     int[][] themesMap = new int[][]{
         {R.id.theme_feature_primary_color, getThemeOverlayResId(primaryColorGroup)},
         {R.id.theme_feature_secondary_color, getThemeOverlayResId(secondaryColorGroup)},
+        {R.id.theme_feature_secondary_variant_color, getThemeOverlayResId(secondaryVariantColorGroup)},
         {R.id.theme_feature_corner_family, getThemeOverlayResId(shapeCornerFamilyGroup)},
         {R.id.theme_feature_corner_size, getThemeOverlayResId(shapeCornerSizeGroup)}
     };

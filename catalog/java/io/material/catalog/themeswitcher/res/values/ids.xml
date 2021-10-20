@@ -23,6 +23,7 @@
 
   <item type="id" name="theme_feature_primary_color" />
   <item type="id" name="theme_feature_secondary_color" />
+  <item type="id" name="theme_feature_secondary_variant_color" />
   <item type="id" name="theme_feature_corner_family" />
   <item type="id" name="theme_feature_corner_size" />
 

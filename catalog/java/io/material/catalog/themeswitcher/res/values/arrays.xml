@@ -39,30 +39,86 @@
   </array>
 
   <array name="mtrl_primary_palettes">
-    <item>@style/ThemeOverlay.PrimaryPalette.Red</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Purple</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Indigo</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Blue</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Green</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Yellow</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Orange</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Brown</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.Grey</item>
-    <item>@style/ThemeOverlay.PrimaryPalette.BlueGrey</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Option1</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Option2</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Option3</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Option4</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Option5</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Option00</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Option00</item>
+  </array>
+  <array name="mtrl_primary_palettes_1">
+    <item>@style/ThemeOverlay.PrimaryPalette.Blue.Option1</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Blue.Option2</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Blue.Option3</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Blue.Option4</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Blue.Option5</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Blue.Option6</item>
+    <item>@style/ThemeOverlay.PrimaryPalette.Blue.Option7</item>
   </array>
 
+    <!--Material Design themes-->
+<!--    <item>@style/ThemeOverlay.PrimaryPalette.Red</item>-->
+<!--    <item>@style/ThemeOverlay.PrimaryPalette.Purple</item>-->
+<!--    <item>@style/ThemeOverlay.PrimaryPalette.Indigo</item>-->
+<!--    <item>@style/ThemeOverlay.PrimaryPalette.Blue</item>-->
+<!--    <item>@style/ThemeOverlay.PrimaryPalette.Green</item>-->
+<!--    <item>@style/ThemeOverlay.PrimaryPalette.Yellow</item>-->
+<!--    <item>@style/ThemeOverlay.PrimaryPalette.Orange</item>-->
+<!--    <item>@style/ThemeOverlay.PrimaryPalette.Brown</item>-->
+<!--    <item>@style/ThemeOverlay.PrimaryPalette.Grey</item>-->
+<!--    <item>@style/ThemeOverlay.PrimaryPalette.BlueGrey</item>-->
+
   <array name="mtrl_secondary_palettes">
-    <item>@style/ThemeOverlay.SecondaryPalette.Red</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Purple</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Indigo</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Blue</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Green</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Yellow</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Orange</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Brown</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.Grey</item>
-    <item>@style/ThemeOverlay.SecondaryPalette.BlueGrey</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Option1</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Option2</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Option3</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Option4</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Option5</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Option6</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Option7</item>
   </array>
+  <array name="mtrl_secondary_palettes_1">
+        <item>@style/ThemeOverlay.SecondaryPalette.Orange.Option1</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Orange.Option2</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Orange.Option3</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Orange.Option4</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Orange.Option5</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Option00</item>
+        <item>@style/ThemeOverlay.SecondaryPalette.Option00</item>
+  </array>
+
+
+  <array name="mtrl_secondary_variant_palettes_blue">
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Option1</item>
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Option2</item>
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Option3</item>
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Option4</item>
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Option5</item>
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Option6</item>
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Option7</item>
+  </array>
+  <array name="mtrl_secondary_variant_palettes_orange">
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Orange.Option1</item>
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Orange.Option2</item>
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Orange.Option3</item>
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Orange.Option4</item>
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Orange.Option5</item>
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Orange.Option00</item>
+        <item>@style/ThemeOverlay.SecondaryVariantPalette.Orange.Option00</item>
+  </array>
+
+  <!--Material Design themes-->
+  <!--    <item>@style/ThemeOverlay.SecondaryPalette.Red</item>-->
+  <!--    <item>@style/ThemeOverlay.SecondaryPalette.Purple</item>-->
+  <!--    <item>@style/ThemeOverlay.SecondaryPalette.Indigo</item>-->
+  <!--    <item>@style/ThemeOverlay.SecondaryPalette.Blue</item>-->
+  <!--    <item>@style/ThemeOverlay.SecondaryPalette.Green</item>-->
+  <!--    <item>@style/ThemeOverlay.SecondaryPalette.Yellow</item>-->
+  <!--    <item>@style/ThemeOverlay.SecondaryPalette.Orange</item>-->
+  <!--    <item>@style/ThemeOverlay.SecondaryPalette.Brown</item>-->
+  <!--    <item>@style/ThemeOverlay.SecondaryPalette.Grey</item>-->
+  <!--    <item>@style/ThemeOverlay.SecondaryPalette.BlueGrey</item>-->
 
   <array name="mtrl_palettes_content_description">
     <item>@string/mtrl_red</item>
@@ -72,9 +128,9 @@
     <item>@string/mtrl_green</item>
     <item>@string/mtrl_yellow</item>
     <item>@string/mtrl_orange</item>
-    <item>@string/mtrl_brown</item>
-    <item>@string/mtrl_grey</item>
-    <item>@string/mtrl_blue_grey</item>
+<!--    <item>@string/mtrl_brown</item>-->
+<!--    <item>@string/mtrl_grey</item>-->
+<!--    <item>@string/mtrl_blue_grey</item>-->
   </array>
 
 </resources>
