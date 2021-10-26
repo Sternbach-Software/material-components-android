@@ -77,7 +77,15 @@ def srcDirs = [
 ]
 
 android {
-  defaultConfig {
+  signingConfigs {
+      release {
+          storeFile file('C:\\Users\\shmue\\AndroidStudioProjects\\material-components-android\\msignature\\msignature')
+          storePassword 'password'
+          keyAlias 'key0'
+          keyPassword 'password'
+      }
+  }
+    defaultConfig {
     manifestPlaceholders = [
       application_name             : 'CatalogApplication',
       application_theme            : 'Catalog',
