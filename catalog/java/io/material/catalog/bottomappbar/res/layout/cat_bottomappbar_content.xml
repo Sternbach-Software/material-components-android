@@ -58,7 +58,8 @@
         <TextView
           android:id="@+id/saved_configurations"
           android:layout_width="wrap_content"
-          android:layout_height="wrap_content" />
+          android:layout_height="wrap_content"
+          android:textIsSelectable="true"/>
         <com.google.android.material.button.MaterialButton
           android:id="@+id/delete_all"
           android:layout_width="wrap_content"
